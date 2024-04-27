@@ -33,6 +33,8 @@ assertEquals(4*6, r1.calculateArea()); // <-- reveals the solution
 
 ## Usage
 
+https://github.com/nilsreichardt/gad24-tests/assets/24459435/6d3126b4-487d-4e40-bdc9-3b15a01170d7
+
 1. Clone this repository
     ```shell
     git clone https://github.com/nilsreichardt/gad24-tests.git
