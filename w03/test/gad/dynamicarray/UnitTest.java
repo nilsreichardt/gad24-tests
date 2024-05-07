@@ -442,14 +442,6 @@ public class UnitTest {
     }
 
     @Test
-    public void dynamicEmptyNotThrows() {
-        // Not sure, if this test case is correct.
-        assertDoesNotThrow(() -> Stck(3, 4).data.popBack());
-        assertDoesNotThrow(() -> Stck(3, 4).pushes(1).pops(1).data.popBack());
-        assertDoesNotThrow(() -> Stck(3, 4).pushes(1, 2, 3, 4).pops(4, 3, 2, 1).data.popBack());
-    }
-
-    @Test
     public void queue1() {
         Queue(3, 4)
                 .test(Ints())
@@ -533,14 +525,6 @@ public class UnitTest {
                 .pops(4)
                 .pushes(7, 8, 1, 3, 3, 7, 6, 9, 4, 2)
                 .test(Ints(5, 6, 7, 8, 1, 3, 3, 7, 6, 9, 4, 2));
-    }
-
-    @Test
-    public void queueZero() {
-        // Not sure, if this test case is correct.
-        assertDoesNotThrow(() -> Queue(3, 4).data.popFront());
-        assertDoesNotThrow(() -> Queue(3, 4).pushes(1).pops(1).data.popFront());
-        assertDoesNotThrow(() -> Queue(3, 4).pushes(1, 2, 3, 4).pops(1, 2, 3, 4).data.popFront());
     }
 
     @Test
