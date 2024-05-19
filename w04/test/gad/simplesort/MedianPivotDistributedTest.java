@@ -11,7 +11,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 public class MedianPivotDistributedTest {
 
     @ParameterizedTest
-    @MethodSource({"artemisBeispiele", "fromEquals0"})
+    @MethodSource({"artemisBeispiele", "fromEquals0", "edgeCases"})
     public void distributedMedianPivotTest(int[] numbers, int expected, int numberOfConsideredElements, int from,
                                            int to) {
         PivotFinder medianPivotFinder = PivotFinder.getMedianPivotDistributed(numberOfConsideredElements);
@@ -68,5 +68,76 @@ public class MedianPivotDistributedTest {
                         3,
                         0,
                         30));
+    }
+
+    private static Stream<Arguments> edgeCases() {
+        return Stream.of(
+                Arguments.of(
+                        new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9},
+                        4,
+                        3,
+                        0,
+                        9),
+                Arguments.of(
+                        new int[]{9, 1, 8, 5, 2, 3, 5, 1, 0, 7},
+                        6,
+                        5,
+                        0,
+                        9),
+                Arguments.of(
+                        new int[]{9, 1, 8, 5, 2, 3, 5, 1, 0, 7},
+                        5,
+                        5,
+                        1,
+                        9),
+                Arguments.of(
+                        new int[]{9, 6, 2, 2, 2},
+                        4,
+                        5,
+                        4,
+                        4),
+                Arguments.of(
+                        new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9},
+                        4,
+                        3,
+                        0,
+                        9),
+                Arguments.of(
+                        new int[]{9, 1, 8, 5, 2, 3, 5, 1, 0, 7},
+                        6,
+                        5,
+                        0,
+                        9),
+                Arguments.of(
+                        new int[]{9, 1, 8, 5, 2, 3, 5, 1, 0, 7},
+                        5,
+                        5,
+                        1,
+                        9),
+                Arguments.of(
+                        new int[]{9, 1, 8},
+                        2,
+                        3,
+                        0,
+                        2),
+                Arguments.of(
+                        new int[]{9, 1},
+                        0,
+                        3,
+                        0,
+                        1),
+                Arguments.of(
+                        new int[]{9},
+                        0,
+                        5,
+                        0,
+                        0),
+                Arguments.of(
+                        new int[]{9, 8},
+                        0,
+                        3,
+                        0,
+                        1)
+        );
     }
 }
