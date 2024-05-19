@@ -123,13 +123,13 @@ public class MedianPivotDistributedTest {
                 Arguments.of(
                         new int[]{9, 1},
                         0,
-                        2,
+                        3,
                         0,
                         1),
                 Arguments.of(
                         new int[]{9},
                         0,
-                        1,
+                        5,
                         0,
                         0),
                 Arguments.of(
