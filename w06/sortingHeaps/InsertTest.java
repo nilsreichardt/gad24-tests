@@ -35,23 +35,4 @@ public class InsertTest {
 
         assertArrayEquals(expectedHeap, binaryHeap.getHeap());
     }
-
-    // @Test
-    // public void testInsertIntoTeranryHeap3() {
-    //     NaryHeap ternaryHeap = new NaryHeap(new int[] { }, 3, 9, result);
-
-    //     ternaryHeap.insert(6);
-    //     ternaryHeap.insert(9);
-    //     ternaryHeap.insert(8);
-    //     ternaryHeap.insert(2);
-    //     ternaryHeap.insert(5);
-    //     ternaryHeap.insert(3);
-    //     ternaryHeap.insert(7);
-    //     ternaryHeap.insert(1);
-    //     ternaryHeap.insert(4);
-
-    //     int[] expectedHeap = { 9, 6, 8, 2, 5, 3, 7, 1, 4 };
-
-    //     assertArrayEquals(expectedHeap, ternaryHeap.getHeap());
-    // }
 }
