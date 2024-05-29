@@ -2,6 +2,9 @@ package gad.sortingHeaps;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
+import java.util.Random;
+import java.util.PriorityQueue;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -53,5 +56,50 @@ public class ExtractMaxTest {
         binaryHeap.extractMax();
         int[] expectedHeapAfterEmpty = { 1 };
         assertArrayEquals(expectedHeapAfterEmpty, binaryHeap.getHeap());
+    }
+
+    @Test
+    void testExtractMaxBinaryBigTest() {
+        int[] values = new int[100_000];
+        Random random = new Random(42);
+
+        for (int i = 0; i < values.length; i++) {
+            values[i] = random.nextInt();
+        }
+
+        NaryHeap binaryHeap = new NaryHeap(values, 2, values.length, result);
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(java.util.Collections.reverseOrder());
+
+        for (int i = 0; i < values.length; i++) {
+            priorityQueue.add(values[i]);
+        }
+
+        for (int i = 0; i < values.length; i++) {
+            int expected = priorityQueue.poll();
+            int actual = binaryHeap.extractMax();
+            assertEquals(expected, actual, "Extracted max elements differ at index " + i);
+        }
+    }
+
+    @Test
+    void testExtractMaxTernaryBigTest() {
+        int[] values = new int[100_000];
+        Random random = new Random(42);
+
+        for (int i = 0; i < values.length; i++) {
+            values[i] = random.nextInt();
+        }
+
+        NaryHeap ternaryHeap = new NaryHeap(values, 3, values.length, result);
+        PriorityQueue<Integer> javaHeap = new PriorityQueue<>(java.util.Collections.reverseOrder());
+        for (int value : values) {
+            javaHeap.add(value);
+        }
+
+        for (int i = 0; i < values.length; i++) {
+            int expectedMax = javaHeap.poll();
+            int actualMax = ternaryHeap.extractMax();
+            assertEquals(expectedMax, actualMax, "Extracted max elements differ at index " + i);
+        }
     }
 }
