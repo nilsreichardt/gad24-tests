@@ -24,37 +24,15 @@ public class StudentResultTest implements Result {
     }
 
     @Override
-    public void logIntermediateStep(Collection<BinomialTreeNode> heap) {
-
-    }
-
-    @Override
-    public void logIntermediateStep(BinomialTreeNode[] heap) {
-
-    }
-
-    @Override
-    public void logIntermediateStep(BinomialTreeNode tree) {
-
-    }
-
-    @Override
-    public void addToIntermediateStep(Collection<BinomialTreeNode> heap) {
-
-    }
-
-    @Override
-    public void addToIntermediateStep(BinomialTreeNode[] heap) {
-
-    }
-
-    @Override
-    public void addToIntermediateStep(BinomialTreeNode tree) {
-
-    }
-
-    @Override
     public void printCurrentIntermediateStep() {
 
+    }
+
+    @Override
+    public void logMerge(BinomialTreeNode treeOne, BinomialTreeNode treeTwo) {
+    }
+
+    @Override
+    public void logMergedTree(BinomialTreeNode mergedTree) {
     }
 }
