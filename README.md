@@ -115,6 +115,7 @@ ln -s /path/to/test-repository/aufgabe/test/gad /path/to/artemis-repository/test
 
 - [PGDP WS 22/23 Tests](https://github.com/MaximilianAnzinger/pgdp2223-tests)
 - [GAD SS23 Tests](https://github.com/JohannesStoehr/gad23-tests)
+- [GAD SS22 Tests](https://github.com/MaximilianAnzinger/gad2022-tests)
 - [Writing Tests using JUnit 5](https://junit.org/junit5/docs/current/user-guide/#writing-tests)
 - [Learning Git with Bitbucket](https://www.atlassian.com/de/git/tutorials/learn-git-with-bitbucket-cloud)
 - [Getting Started with GitHub](https://docs.github.com/en/get-started/quickstart/hello-world)
